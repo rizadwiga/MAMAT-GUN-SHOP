@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout - Toko Senjata</title>
+  <link rel="stylesheet" href="stylecheckout.css" />
+  <link rel="stylesheet" href="footer.css" />
+  <link rel="icon" href="images/logo.png" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+          <div class="logo">
+            <img src="images/logo.png" alt="Logo Toko Senjata">
+            <span>Mamat Gun Store</span>
+          </div>
+          <nav class="nav">
+            <a href="index.html">Beranda</a>
+            <a href="about.html">Tentang</a>
+            <a href="contact.html">Kontak</a>
+            <a href="shop.html">Toko</a>
+            <a href="cart.html">Keranjang</a>
+            <a href="checkout.html">Bayar</a>
+            <a href="invoice.html">Tagihan</a>
+          </nav>
+        </div>
+      </header>
+
+  <section class="checkout-section">
+    <div class="checkout-container">
+      <h2>Informasi Pembeli</h2>
+
+     
+      <div id="form-alert" class="error-message" style="display: none;"></div>
+
+      <form id="checkout-form" class="checkout-form">
+        <div class="form-group">
+          <label for="nama">Nama Lengkap</label>
+          <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap Anda" required />
+        </div>
+      
+        <div class="form-group">
+          <label for="alamat">Alamat Lengkap</label>
+          <textarea id="alamat" name="alamat" rows="3" placeholder="Masukkan alamat lengkap Anda" required></textarea>
+        </div>
+      
+        <div class="form-group">
+          <label for="telepon">Nomor Telepon</label>
+          <input type="tel" id="telepon" name="telepon" placeholder="Contoh: 0812-3456-7890" required />
+        </div>
+      
+        <div class="form-group">
+          <label for="metode">Metode Pembayaran</label>
+          <select id="metode" name="metode" required>
+            <option value="" disabled selected>Pilih metode pembayaran</option>
+            <option value="cod">COD (Bayar di Tempat)</option>
+            <option value="transfer">Transfer Bank</option>
+            <option value="ewallet">E-Wallet</option>
+          </select>
+        </div>
+      
+        <div id="checkout-total" class="summary">
+          <h3>Total Pembayaran:</h3>
+          <p><span class="total">Rp. </span></p>
+        </div>
+      
+        <button type="submit" class="checkout-btn">Bayar Sekarang</button>
+      </form>
+      
+    </div>
+  </section>
+  <audio id="bg-music" loop>
+    <source src="music/music1.mp3" type="audio/mpeg">
+    Browser Anda tidak mendukung audio.
+  </audio>
+
+ 
+  <div class="music-control" onclick="toggleMusic()">🎵</div>
+
+  <script>
+    const music = document.getElementById("bg-music");
+    const controlBtn = document.querySelector(".music-control");
+    let isPlaying = false;
+
+    function toggleMusic() {
+      if (isPlaying) {
+        music.pause();
+        controlBtn.textContent = "🎵";
+      } else {
+        music.play();
+        controlBtn.textContent = "⏸️";
+      }
+      isPlaying = !isPlaying;
+    }
+  </script>
+
+<footer>
+  <div class="waves">
+    <div class="wave" id="wave1"></div>
+    <div class="wave" id="wave2"></div>
+    <div class="wave" id="wave3"></div>
+    <div class="wave" id="wave4"></div>
+  </div>
+  <ul class="social_icon">
+    <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+    <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+    <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+  </ul>
+  <ul class="menu">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="about.html">Tentang</a></li>
+      <li><a href="contact.html">Kontak</a></li>
+      <li><a href="shop.html">Toko</a></li>
+      <li><a href="cart.html" class="active">Keranjang</a></li>
+      <li><a href="checkout.html">Bayar</a></li>
+      <li><a href="invoice.html">Tagihan</a></li>
+  </ul>
+  <p>&copy; 2025 Toko Senjata. Semua Hak Dilindungi.</p>
+</footer>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="checkout.js"></script>
+</body>
+</html>

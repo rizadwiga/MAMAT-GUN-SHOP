@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tagihan Anda</title>
+  <link rel="stylesheet" href="styleinvoice.css" />
+  <link rel="icon" href="images/logo.png" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <img src="images/logo.png" alt="Logo Toko Senjata">
+        <span>Mamat Gun Store</span>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Beranda</a>
+        <a href="about.html">Tentang</a>
+        <a href="contact.html">Kontak</a>
+        <a href="shop.html">Toko</a>
+        <a href="cart.html">Keranjang</a>
+        <a href="checkout.html">Bayar</a>
+        <a href="invoice.html">Tagihan</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="invoice-wrapper">
+    <div class="invoice-header">
+      <h1>Invoice</h1>
+      <p>ID Tagihan: <span>#INV123456</span></p>
+    </div>
+
+    <section class="invoice-info">
+      <div class="info-block">
+        <h3>Informasi Pelanggan :</h3>
+        <p><strong>Nama:</strong> Aga Asli</p>
+        <p><strong>Alamat:</strong> Krapyak</p>
+        <p><strong>Telepon:</strong> 082332640041</p>
+        <p><strong>Metode Pembayaran:</strong> Transfer Bank</p>
+      </div>
+
+      <div class="info-block">
+        <h3>Detail Pesanan :</h3>
+        <ul class="order-list">
+          <li>M4A1 Assault Rifle x1 <span>Rp12.500.000</span></li>
+          <li>Mosin Nagant x1 <span>Rp14.000.000</span></li>
+          <li>Biaya Pengiriman <span>Rp500.000</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="invoice-footer">
+      <div class="total">
+        <span>Total Pembayaran:</span>
+        <strong>Rp27.000.000</strong>
+      </div>
+      <p>Terima kasih telah berbelanja di <strong>Toko Senjata</strong>!</p>
+      <button onclick="printInvoice()" class="btn-print">🖨️ Cetak Invoice</button>
+      <a href="index.html" class="btn-back">Kembali Ke Beranda</a>
+    </footer>
+  </div>
+
+  <audio id="bg-music" loop>
+    <source src="music/music1.mp3" type="audio/mpeg">
+    Browser Anda tidak mendukung audio.
+  </audio>
+
+  <div class="music-control" onclick="toggleMusic()">🎵</div>
+
+  <script src="invoice.js"></script>
+</body>
+</html>
