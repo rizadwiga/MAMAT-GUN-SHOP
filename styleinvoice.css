@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background: url("images/bg3.jpg") no-repeat center/cover;
+  font-family: 'Poppins', sans-serif;
+  color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.site-header {
+  background: linear-gradient(135deg, #111, #1c1c1c);
+  padding: 30px 40px;
+  border-bottom: 2px solid #29b6f6;
+  box-shadow: 0 4px 20px rgba(41, 182, 246, 0.1);
+  width: 100%;
+  max-width: 90%;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.site-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(41,182,246,0.15), transparent);
+  animation: pulse-header 6s linear infinite;
+  z-index: 0;
+}
+
+@keyframes pulse-header {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(50%); }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #29b6f6;
+  text-shadow: 0 0 10px rgba(41,182,246, 0.8);
+}
+
+.logo img {
+  width: 36px;
+  height: 36px;
+}
+
+.nav a {
+  margin-left: 25px;
+  color: #f5f5f5;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #29b6f6;
+  left: 0;
+  bottom: -5px;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.nav a:hover {
+  color: #29b6f6;
+}
+
+.invoice-wrapper {
+  width: 420px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  color: #fff;
+  border-radius: 10px;
+  padding: 30px 40px;
+}
+
+.invoice-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.invoice-header h1 {
+  font-size: 2.2rem;
+  color: #29b6f6;
+  margin-bottom: 10px;
+}
+
+.invoice-header p span {
+  color: #ffd54f;
+  font-weight: bold;
+}
+
+.invoice-info {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.info-block h3 {
+  color: #29b6f6;
+  margin-bottom: 10px;
+}
+
+.order-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.order-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #444;
+}
+
+.invoice-footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.invoice-footer .total {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #ffd54f;
+}
+
+.btn-back,
+.btn-print {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 12px 24px;
+  color: #29b6f6;
+  background: linear-gradient(135deg, rgba(41,182,246,0.2), rgba(255,255,255,0.05));
+  border: 1px solid rgba(41,182,246, 0.5);
+  border-radius: 8px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 12px rgba(41,182,246, 0.3);
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  width: 90%;
+  text-align: center;
+}
+
+.btn-print {
+  margin-bottom: 5px; 
+}
+
+.btn-back:hover,
+.btn-print:hover {
+  background: linear-gradient(135deg, rgba(41,182,246,0.4), rgba(255,255,255,0.1));
+  color: #fff;
+  box-shadow: 0 0 25px rgba(41,182,246, 0.7);
+  border-color: #29b6f6;
+}
+
+.music-control {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid #29b6f6;
+  border-radius: 50%;
+  padding: 12px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  color: #29b6f6;
+  box-shadow: 0 0 12px rgba(41,182,246,0.3);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.music-control:hover {
+  background: rgba(41,182,246,0.1);
+  box-shadow: 0 0 20px rgba(41,182,246,0.6);
+}
+
+/* Cetak hanya invoice */
+@media print {
+  body {
+    background: none;
+    color: black;
+  }
+  .site-header,
+  .music-control,
+  .btn-back,
+  .btn-print {
+    display: none;
+  }
+  .invoice-wrapper {
+    box-shadow: none;
+    border: none;
+    background: none;
+  }
+}
